@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearlyU - Premium Skincare</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+   
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4E4BC;
+            --gold-dark: #B8941F;
+            --white: #FFFFFF;
+            --cream: #FEFCF7;
+            --gray-light: #F8F9FA;
+            --gray: #6C757D;
+            --gray-dark: #343A40;
+            --black: #000000;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--white) 0%, var(--cream) 100%);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .nav {
+            display: none;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--gray-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--gold);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cart-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--gray-dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cart-btn:hover {
+            color: var(--gold);
+        }
+
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray-dark);
+            cursor: pointer;
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--white) 50%, var(--gold-light) 100%);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23D4AF37" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23D4AF37" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23D4AF37" opacity="0.15"/><circle cx="10" cy="60" r="0.5" fill="%23D4AF37" opacity="0.15"/><circle cx="90" cy="40" r="0.5" fill="%23D4AF37" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gray-dark);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-cta {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background-color: var(--gray-light);
+            padding: 2rem 0;
+        }
+
+        .filter-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        /* CSS-only Filter System */
+        .filter-input {
+            display: none;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--gold);
+            background-color: var(--white);
+            color: var(--gold);
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .filter-btn:hover {
+            background-color: var(--gold);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Active filter styling */
+        .filter-input:checked + .filter-btn {
+            background-color: var(--gold);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--gray-dark);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* CSS-only filtering */
+        .product-card {
+            display: block;
+        }
+
+        /* Hide products based on filter selection */
+        #filter-cleanser:checked ~ .products-section .product-card:not([data-category="cleanser"]) {
+            display: none;
+        }
+
+        #filter-serum:checked ~ .products-section .product-card:not([data-category="serum"]) {
+            display: none;
+        }
+
+        #filter-moisturizer:checked ~ .products-section .product-card:not([data-category="moisturizer"]) {
+            display: none;
+        }
+
+        #filter-mask:checked ~ .products-section .product-card:not([data-category="mask"]) {
+            display: none;
+        }
+
+        /* Swipeable Image Container */
+        .product-image-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--cream) 100%);
+        }
+
+        /* CSS-only image slider */
+        .image-slider {
+            display: flex;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image {
+            flex: 0 0 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+            user-select: none;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        /* CSS-only image navigation */
+        .image-nav-input {
+            display: none;
+        }
+
+        .image-nav {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .image-nav-input:checked + .nav-dot {
+            background-color: var(--gold);
+            transform: scale(1.2);
+        }
+
+        /* Image slider positioning based on checked inputs */
+        .img1:checked ~ .image-slider {
+            transform: translateX(0%);
+        }
+
+        .img2:checked ~ .image-slider {
+            transform: translateX(-100%);
+        }
+
+        .img3:checked ~ .image-slider {
+            transform: translateX(-200%);
+        }
+
+        .img4:checked ~ .image-slider {
+            transform: translateX(-300%);
+        }
+
+        /* Default to first image */
+        .image-slider {
+            transform: translateX(0%);
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .star {
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        .star.empty {
+            color: var(--gold-light);
+        }
+
+        .rating-text {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--gray-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .buy-btn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 10px 15px;
+              border-radius: var(--border-radius);
+              font-weight: 600;
+              text-decoration: none;
+              transition: var(--transition);
+              gap: 8px;
+              flex: 1;
+              min-width: 120px;
+              font-size: 0.85rem;
+              text-align: center;
+              border: 2px solid var(--gold);
+
+        }
+
+
+
+        .amazon-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 153, 0, 0.4);
+        }
+        .flipkart-btn:hover {
+             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 153, 0, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--gray-dark) 0%, var(--black) 100%);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .footer-section p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray);
+            padding-top: 1rem;
+            text-align: center;
+            color: var(--gray);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .nav {
+                display: block;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .filter-controls {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Animation Classes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* CSS-only search functionality simulation */
+        .search-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 1rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid var(--gold-light);
+            border-radius: 25px;
+            font-size: 1rem;
+            background-color: var(--white);
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        /* Hover effects for better interactivity */
+        .product-card {
+            cursor: pointer;
+        }
+
+        .nav-dot:hover {
+            background-color: var(--gold);
+            transform: scale(1.2);
+        }
+
+        /* Enhanced visual feedback */
+        .filter-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .buy-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        /* Accessibility improvements */
+        .filter-input:focus + .filter-btn {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        .image-nav-input:focus + .nav-dot {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Filter Controls (Hidden inputs for CSS-only functionality) -->
+    <input type="radio" name="filter" id="filter-all" class="filter-input" checked>
+    <input type="radio" name="filter" id="filter-cleanser" class="filter-input">
+    <input type="radio" name="filter" id="filter-serum" class="filter-input">
+    <input type="radio" name="filter" id="filter-moisturizer" class="filter-input">
+    <input type="radio" name="filter" id="filter-mask" class="filter-input">
+
+    <!-- Header -->
+     <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="ClearlyU" width="90" height="70"></a>
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://www.instagram.com/ClearlyU.in/" class="active"><i class="fab fa-instagram"></i></a></li>
+                   <li><a href="https://wa.me/+918572065876" class="active"><i class="fab fa-whatsapp"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section 
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Premium Skincare Collection</h1>
+                <p class="hero-subtitle">Discover our luxurious range of natural skincare products crafted with the finest ingredients for radiant, healthy skin</p>
+                <a href="#products" class="hero-cta">
+                    <i class="fas fa-sparkles"></i> Explore Products
+                </a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="filter-buttons">
+                    <label for="filter-all" class="filter-btn">All Products</label>
+                    <label for="filter-cleanser" class="filter-btn">Cleansers</label>
+                    <label for="filter-serum" class="filter-btn">Sunscreen</label>
+                    <label for="filter-moisturizer" class="filter-btn">Moisturiser</label>
+                    <!-- <label for="filter-mask" class="filter-btn">Combos</label> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <!-- <h2 class="section-title">Our Signature Products</h2> -->
+            <div class="products-grid">
+                
+                <!-- Product 1: Vitamin C Serum -->
+                <div class="product-card" data-category="serum">
+                    <div class="product-image-container">
+                        <input type="radio" name="product1-img" id="product1-img1" class="image-nav-input img1" checked>
+                        <input type="radio" name="product1-img" id="product1-img2" class="image-nav-input img2">
+                        <input type="radio" name="product1-img" id="product1-img3" class="image-nav-input img3">
+                        <input type="radio" name="product1-img" id="product1-img4" class="image-nav-input img4">
+                        
+                        <div class="image-slider">
+                            <div class="product-image">
+                                <img src="images/sg/4.jpg" alt="1">
+                            </div>
+                            <div class="product-image">
+                                <img src="images/sg/2.jpg" alt="2">
+                            </div>
+                            <div class="product-image">
+                                <img src="images/sg/3.jpg" alt="3">
+                            </div>
+                            <div class="product-image">
+                                <img src="images/sg/1.jpg" alt="4">
+                            </div>
+                        </div>
+                        
+                        <div class="product-badge">Best Seller</div>
+                        
+                        <div class="image-nav">
+                            <label for="product1-img1" class="nav-dot"></label>
+                            <label for="product1-img2" class="nav-dot"></label>
+                            <label for="product1-img3" class="nav-dot"></label>
+                            <label for="product1-img4" class="nav-dot"></label>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                            </div>
+                            <span class="rating-text">(234 reviews)</span>
+                        </div>
+                        <h3 class="product-title">The OG Sunscreen</h3>
+                        <p class="product-description">SPF 50 Gel Based Sunscreen </n> Hyaluronic Acid Hydration Boost: Deeply hydrates and plumps skin without greasiness. </p>
+                        <div class="product-price">
+                            ₹ 349
+                            <span style="text-decoration: line-through; color: var(--gray); font-size: 1rem; margin-left: 0.5rem;">₹ 699.99</span>
+                            <span style="color: #28a745; font-size: 0.9rem; margin-left: 0.5rem;">50% OFF</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://amzn.in/d/ftsh4N4" target="_blank" rel="noopener noreferrer" class="buy-btn amazon-btn">
+                                <i class="fab fa-amazon"></i> Amazon
+                            </a>
+                            <a href="https://dl.flipkart.com/s/eEuqhjNNNN" target="_blank" rel="noopener noreferrer" class="buy-btn flipkart-btn">
+                                <i class="fas fa-shopping-cart"></i> Flipkart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Hydrating Cleanser -->
+                <div class="product-card" data-category="cleanser">
+                    <div class="product-image-container">
+                        <input type="radio" name="product2-img" id="product2-img1" class="image-nav-input img1" checked>
+                        <input type="radio" name="product2-img" id="product2-img2" class="image-nav-input img2">
+                        <input type="radio" name="product2-img" id="product2-img3" class="image-nav-input img3">
+                        
+                        <div class="image-slider">
+                            <div class="product-image">
+                                <img src="images/osk/2.jpg" alt="Hydrating Cleanser Front">
+                            </div>
+                            <div class="product-image">
+                                <img src="images/osk/1.jpg" alt="Hydrating Cleanser Back">
+                            </div>
+                            <div class="product-image">
+                                <img src="images/osk/3.jpg" alt="Hydrating Cleanser Texture">
+                            </div>
+                                <div class="product-image">
+                                <img src="images/osk/4.jpg" alt="Hydrating Cleanser Texture">
+                            </div>
+                        </div>
+                        
+                        <div class="product-badge">New</div>
+                        
+                        <div class="image-nav">
+                            <label for="product2-img1" class="nav-dot"></label>
+                            <label for="product2-img2" class="nav-dot"></label>
+                            <label for="product2-img3" class="nav-dot"></label>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star empty"></i>
+                            </div>
+                            <span class="rating-text">(189 reviews)</span>
+                        </div>
+                        <h3 class="product-title">Oily Skin Cleanser</h3>
+                        <p class="product-description">Oil Control Face Wash : Formulated for excess sebum, breakouts, clogged pores & active acne. Deeply cleanses without over-drying.</p>
+                        <div class="product-price">
+                            ₹ 249
+                            <span style="text-decoration: line-through; color: var(--gray); font-size: 1rem; margin-left: 0.5rem;">₹ 449.99</span>
+                            <span style="color: #28a745; font-size: 0.9rem; margin-left: 0.5rem;">45% OFF</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://amzn.in/d/dYQ0f8Q" target="_blank" rel="noopener noreferrer" class="buy-btn amazon-btn">
+                                <i class="fab fa-amazon"></i> Amazon
+                            </a>
+                            <a href="https://dl.flipkart.com/s/5lRN9VuuuN" target="_blank" rel="noopener noreferrer" class="buy-btn flipkart-btn">
+                                <i class="fas fa-shopping-cart"></i> Flipkart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Gold Moisturizer -->
+                <div class="product-card" data-category="moisturizer">
+                    <div class="product-image-container">
+                        <input type="radio" name="product3-img" id="product3-img1" class="image-nav-input img1" checked>
+                        <input type="radio" name="product3-img" id="product3-img2" class="image-nav-input img2">
+                        <input type="radio" name="product3-img" id="product3-img3" class="image-nav-input img3">
+                        <input type="radio" name="product3-img" id="product3-img4" class="image-nav-input img4">
+                        
+                        <div class="image-slider">
+                            <div class="product-image">
+                                <img src="images/fm/2.jpg" alt="Gold Moisturizer Front">
+                            </div>
+                            <div class="product-image">
+                                <img src="images/fm/1.jpg" alt="Gold Moisturizer Jar">
+                            </div>
+                            <div class="product-image">
+                                <img src="images/fm/3.jpg" alt="Gold Moisturizer Texture">
+                            </div>
+                            <div class="product-image">
+                                <img src="images/fm/4.jpg" alt="Gold Moisturizer Benefits">
+                            </div>
+                        </div>
+                        
+                        <div class="product-badge">Premium</div>
+                        
+                        <div class="image-nav">
+                            <label for="product3-img1" class="nav-dot"></label>
+                            <label for="product3-img2" class="nav-dot"></label>
+                            <label for="product3-img3" class="nav-dot"></label>
+                            <label for="product3-img4" class="nav-dot"></label>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                            </div>
+                            <span class="rating-text">(156 reviews)</span>
+                        </div>
+                        <h3 class="product-title">Your New Moisturiser</h3>
+                        <p class="product-description">Oil-Free Hydration for All Skin Types </n> Lightweight, fast-absorbing face moisturiser suitable for oily, dry, acne-prone, and combination skin <div class="product-price">
+                            ₹ 349
+                            <span style="text-decoration: line-through; color: var(--gray); font-size: 1rem; margin-left: 0.5rem;">₹ 499.99</span>
+                            <span style="color: #28a745; font-size: 0.9rem; margin-left: 0.5rem;">30% OFF</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://amzn.in/d/1gkMx6g" target="_blank" rel="noopener noreferrer" class="buy-btn amazon-btn">
+                                <i class="fab fa-amazon"></i> Amazon
+                            </a>
+                            <a href="https://dl.flipkart.com/s/5lwwM1uuuN" target="_blank" rel="noopener noreferrer" class="buy-btn flipkart-btn">
+                                <i class="fas fa-shopping-cart"></i> Flipkart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Face Mask
+                <div class="product-card" data-category="mask">
+                    <div class="product-image-container">
+                        <input type="radio" name="product4-img" id="product4-img1" class="image-nav-input img1" checked>
+                        <input type="radio" name="product4-img" id="product4-img2" class="image-nav-input img2">
+                        <input type="radio" name="product4-img" id="product4-img3" class="image-nav-input img3">
+                        
+                        <div class="image-slider">
+                            <div class="product-image">
+                                <img src="/placeholder.svg?height=300&width=300&text=Face+Mask+Front&bg=FEFCF7" alt="Face Mask Front">
+                            </div>
+                            <div class="product-image">
+                                <img src="/placeholder.svg?height=300&width=300&text=Face+Mask+Application&bg=F4E4BC" alt="Face Mask Application">
+                            </div>
+                            <div class="product-image">
+                                <img src="/placeholder.svg?height=300&width=300&text=Face+Mask+Results&bg=FEFCF7" alt="Face Mask Results">
+                            </div>
+                        </div>
+                        
+                        <div class="product-badge">Popular</div>
+                        
+                        <div class="image-nav">
+                            <label for="product4-img1" class="nav-dot"></label>
+                            <label for="product4-img2" class="nav-dot"></label>
+                            <label for="product4-img3" class="nav-dot"></label>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star empty"></i>
+                            </div>
+                            <span class="rating-text">(203 reviews)</span>
+                        </div>
+                        <h3 class="product-title">Radiance Boosting Face Mask</h3>
+                        <p class="product-description">Weekly treatment mask that instantly brightens and smooths your complexion with natural botanical extracts.</p>
+                        <div class="product-price">
+                            ₹ 39.99
+                            <span style="text-decoration: line-through; color: var(--gray); font-size: 1rem; margin-left: 0.5rem;">₹ 54.99</span>
+                            <span style="color: #28a745; font-size: 0.9rem; margin-left: 0.5rem;">27% OFF</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://amazon.com/dp/B08GHI012" target="_blank" rel="noopener noreferrer" class="buy-btn amazon-btn">
+                                <i class="fab fa-amazon"></i> Amazon
+                            </a>
+                            <a href="https://flipkart.com/face-mask/p/itm901234" target="_blank" rel="noopener noreferrer" class="buy-btn flipkart-btn">
+                                <i class="fas fa-shopping-cart"></i> Flipkart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Retinol Serum
+                <div class="product-card" data-category="serum">
+                    <div class="product-image-container">
+                        <input type="radio" name="product5-img" id="product5-img1" class="image-nav-input img1" checked>
+                        <input type="radio" name="product5-img" id="product5-img2" class="image-nav-input img2">
+                        <input type="radio" name="product5-img" id="product5-img3" class="image-nav-input img3">
+                        
+                        <div class="image-slider">
+                            <div class="product-image">
+                                <img src="/placeholder.svg?height=300&width=300&text=Retinol+Serum+Front&bg=F4E4BC" alt="Retinol Serum Front">
+                            </div>
+                            <div class="product-image">
+                                <img src="/placeholder.svg?height=300&width=300&text=Retinol+Serum+Dropper&bg=FEFCF7" alt="Retinol Serum Dropper">
+                            </div>
+                            <div class="product-image">
+                                <img src="/placeholder.svg?height=300&width=300&text=Retinol+Serum+Benefits&bg=F4E4BC" alt="Retinol Serum Benefits">
+                            </div>
+                        </div>
+                        
+                        <div class="product-badge">Advanced</div>
+                        
+                        <div class="image-nav">
+                            <label for="product5-img1" class="nav-dot"></label>
+                            <label for="product5-img2" class="nav-dot"></label>
+                            <label for="product5-img3" class="nav-dot"></label>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                            </div>
+                            <span class="rating-text">(178 reviews)</span>
+                        </div>
+                        <h3 class="product-title">Pure Retinol Anti-Age Serum</h3>
+                        <p class="product-description">Advanced anti-aging serum with pure retinol to reduce fine lines, wrinkles, and improve skin texture.</p>
+                        <div class="product-price">
+                            ₹ 59.99
+                            <span style="text-decoration: line-through; color: var(--gray); font-size: 1rem; margin-left: 0.5rem;">₹ 79.99</span>
+                            <span style="color: #28a745; font-size: 0.9rem; margin-left: 0.5rem;">25% OFF</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://amazon.com/dp/B08JKL345" target="_blank" rel="noopener noreferrer" class="buy-btn amazon-btn">
+                                <i class="fab fa-amazon"></i> Amazon
+                            </a>
+                            <a href="https://flipkart.com/retinol-serum/p/itm567890" target="_blank" rel="noopener noreferrer" class="buy-btn flipkart-btn">
+                                <i class="fas fa-shopping-cart"></i> Flipkart
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Product 6: Exfoliating Cleanser -->
+                <div class="product-card" data-category="cleanser">
+                    <div class="product-image-container">
+                        <input type="radio" name="product6-img" id="product6-img1" class="image-nav-input img1" checked>
+                        <input type="radio" name="product6-img" id="product6-img2" class="image-nav-input img2">
+                        <input type="radio" name="product6-img" id="product6-img3" class="image-nav-input img3">
+                        <input type="radio" name="product6-img" id="product6-img4" class="image-nav-input img4">
+                        
+                        <div class="image-slider">
+                            <div class="product-image">
+                                <img src="images/gsk/2.jpg" alt="Exfoliating Cleanser Front">
+                            </div>
+                            <div class="product-image">
+                                <img src="images/gsk/1.jpg" alt="Exfoliating Cleanser Texture">
+                            </div>
+                            <div class="product-image">
+                                <img src="images/gsk/3.jpg" alt="Exfoliating Cleanser Texture">
+                            </div>
+                            <div class="product-image">
+                                <img src="images/gsk/4.jpg" alt="Exfoliating Cleanser Texture">
+                            </div>
+                        </div>
+                        
+                        <div class="product-badge">Gentle</div>
+                        
+                        <div class="image-nav">
+                            <label for="product6-img1" class="nav-dot"></label>
+                            <label for="product6-img2" class="nav-dot"></label>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star empty"></i>
+                            </div>
+                            <span class="rating-text">(145 reviews)</span>
+                        </div>
+                        <h3 class="product-title">Gentle Skin Cleanser</h3>
+                        <p class="product-description">Soap-Free, pH Balanced Face Wash. Perfect face wash for sensitive, dry, and acne-prone skin types.</p>
+                        <div class="product-price">
+                            ₹ 249
+                            <span style="text-decoration: line-through; color: var(--gray); font-size: 1rem; margin-left: 0.5rem;">₹ 700</span>
+                            <span style="color: #28a745; font-size: 0.9rem; margin-left: 0.5rem;">65% OFF</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://amzn.in/d/8ipDFwK" target="_blank" rel="noopener noreferrer" class="purchase-btn amazon-btn">
+                                <i class="fab fa-amazon"></i> Amazon
+                            </a>
+                            <a href="https://dl.flipkart.com/s/eEtkRONNNN" target="_blank" rel="noopener noreferrer" class="buy-btn flipkart-btn">
+                                <i class="fas fa-shopping-cart"></i> Flipkart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+        <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3><span class="logo-accent">Clearly</span>U</h3>
+                    <p>Premium skincare products made with natural ingredients for a radiant, healthy glow.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/16j2LBGwbG/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/ClearlyU.in/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.x.com/clearlyu_in/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/+918572065876"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a> |
+                        <a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a> |
+                        <a href="contact.html">Contact</a></li>
+                        <li><a href="underConstruction.html">Privacy Policy</a></li>
+                        <li><a href="underConstruction.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <!--div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i>Industrial Area, Chandigarh, India</li>
+                        <li><i class="fas fa-phone"></i>(+91) 8572065876</li>
+                        <li><i class="fas fa-envelope"></i> clearlyu.in@gmail.com</li>
+                    </ul>
+            </div-->
+            </div>
+            <div class="footer-bottom">
+                <p>&copy;  ClearlyU | All Rights Reserved | Crafted with ❤️ for beautiful skins.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PurelyU</h3>
+                    <p>Premium skincare products made with natural ingredients for healthy, glowing skin. Experience the luxury of pure beauty.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Cleansers</a></li>
+                        <li><a href="#">Serums</a></li>
+                        <li><a href="#">Moisturizers</a></li>
+                        <li><a href="#">Masks</a></li>
+                        <li><a href="#">Eye Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PurelyU. All rights reserved. | Crafted with ❤️ for beautiful skin</p>
+            </div>
+        </div>
+    </footer> -->
+</body>
+</html>

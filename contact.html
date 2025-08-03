@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearlyU - Premium Skincare</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="ClearlyU" width="90" height="70"></a>
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="https://www.instagram.com/ClearlyU.in/"><i class="fab fa-instagram"></i></a></li>
+                   <li><a href="https://wa.me/+918572065876"><i class="fab fa-whatsapp"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions about our products or need skincare advice? Our team is here to help!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-details">
+                                <h3>Visit Us</h3>
+                                <p>156, Sector 16<br>Hisar - 125001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-details">
+                                <h3>Call Us</h3>
+                                <p>(+91) 857-206-5876<br>Mon-Fri: 9am-5pm</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-details">
+                                <h3>Email Us</h3>
+                                <p>clearlyu.in@gmail.com<br>support@clearlyu.in</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="social-connect">
+                        <h3>Connect With Us</h3>
+                        <div class="benefit-icon">
+                        <a href="https://www.facebook.com/share/16j2LBGwbG/"><i class="fab fa-facebook-f"></i></a> &nbsp;&nbsp;
+                        <a href="https://www.instagram.com/ClearlyU.in/"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+                        <a href="https://www.x.com/clearlyu_in/"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+                        <a href="https://wa.me/+918572065876"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="general">General Inquiry</option>
+                                <option value="product">Product Question</option>
+                                <option value="order">Order Status</option>
+                                <option value="returns">Returns & Exchanges</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Subscribe to our newsletter</label>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <div id="formSuccess" class="form-success">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Thank you for your message! We'll get back to you soon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--section class="map-section">
+        <div class="container">
+            <h2>Find Us</h2>
+            <div class="map-container">
+                <gmp-map center="37.4220656,-122.0840897" zoom="10" map-id="DEMO_MAP_ID" style="height: 400px"></gmp-map>
+                <img src="images/20.jpg" alt="ClearlyU Store Location Map" class="map-placeholder">
+            </div>
+        </div>
+    </section-->
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is your return policy?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a damage proof satisfaction guarantee. If you gets completely damaged product with your purchase, you can return it within 7 days for a full refund or exchange.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does shipping take?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Standard shipping typically takes 3-4 business days within the North India and 4-5 days when shipped to South India.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are your products suitable for sensitive skin?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Many of our products are formulated for sensitive skin. We recommend checking the product descriptions or contacting us directly to find the best options for your specific skin concerns.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer samples?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer sample sizes of most products. You can connect on our instagram and ask for samples.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3><span class="logo-accent">Clearly</span>U</h3>
+                    <p>Premium skincare products made with natural ingredients for a radiant, healthy glow.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/16j2LBGwbG/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/ClearlyU.in/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.x.com/clearlyu_in/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/+918572065876"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a> |
+                        <a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a> |
+                        <a href="contact.html">Contact</a></li>
+                        <li><a href="underConstruction.html">Privacy Policy</a></li>
+                        <li><a href="underConstruction.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <!--div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i>Industrial Area, Chandigarh, India</li>
+                        <li><i class="fas fa-phone"></i>(+91) 8572065876</li>
+                        <li><i class="fas fa-envelope"></i> clearlyu.in@gmail.com</li>
+                    </ul>
+            </div-->
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 ClearlyU. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
